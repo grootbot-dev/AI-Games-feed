@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="description" content="Swipe through AI-made browser games." />
+    <link rel="canonical" href="https://games.omgithub.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://games.omgithub.com/" />
+    <meta property="og:title" content="AI Games Feed — Claude vs ChatGPT" />
+    <meta property="og:description" content="Swipe through AI-made browser games." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="AI Games Feed — Claude vs ChatGPT" />
+    <meta name="twitter:description" content="Swipe through AI-made browser games." />
+    <title>AI Games Feed — Claude vs ChatGPT</title>
+    <script type="module" crossorigin src="/assets/main-3X1KBKWH.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/supabase-config-Cso8e-ti.js">
+    <link rel="stylesheet" crossorigin href="/assets/main-BCG6A3qi.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <span class="logo">AI Games Feed</span>
+      <div class="topbar-right">
+        <div class="sort" id="sort" role="group" aria-label="Sort feed">
+          <button type="button" class="sort-btn active" data-sort="top" aria-pressed="true">Top</button>
+          <button type="button" class="sort-btn" data-sort="new" aria-pressed="false">New</button>
+        </div>
+        <button type="button" class="filter-btn" id="mobileFilter" aria-pressed="false" title="Show only mobile-tagged games">Mobile</button>
+        <button type="button" class="filter-btn active tag-filter" id="tagFilter" hidden></button>
+        <button type="button" class="filter-btn search-btn" id="searchBtn" aria-label="Search games" title="Search games">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+        </button>
+        <span class="meta" id="count"></span>
+      </div>
+      <div class="search-box" id="searchBox" hidden>
+        <input type="search" id="searchInput" placeholder="Search games, creators, tags" autocomplete="off" enterkeyhint="search" aria-label="Search games" />
+        <button type="button" class="search-clear" id="searchClear" aria-label="Close search">✕</button>
+      </div>
+    </header>
+    <main id="feed" class="feed" aria-label="Game feed"></main>
+    <a class="create-game" href="https://omgithub.com/" target="_blank" rel="noopener noreferrer" aria-label="Create a game" title="Create a game">
+      <span class="create-game-plus" aria-hidden="true"></span>
+    </a>
+    <div class="hint" id="hint">Swipe down ↓</div>
+    <div class="toast" id="toast" hidden role="status" aria-live="polite"></div>
+    <div id="commentsSheet" class="comments-sheet" hidden aria-hidden="true">
+      <div class="comments-backdrop" data-close-comments></div>
+      <div class="comments-panel" role="dialog" aria-modal="true" aria-labelledby="commentsTitle">
+        <div class="comments-grab" aria-hidden="true"><span class="comments-handle"></span></div>
+        <header class="comments-header">
+          <h2 id="commentsTitle" class="comments-title">Comments</h2>
+          <button type="button" class="comments-close" aria-label="Close comments" data-close-comments>&times;</button>
+        </header>
+        <div class="comments-list" id="commentsList"></div>
+      </div>
+    </div>
+    <div id="playOverlay" class="play-overlay" hidden aria-hidden="true">
+      <div class="play-overlay-bar">
+        <button type="button" class="play-overlay-exit" data-close-play>Exit</button>
+        <a class="play-overlay-open" data-open-play href="#" target="_blank" rel="noopener noreferrer">Open ↗</a>
+      </div>
+      <iframe
+        id="playFrame"
+        class="play-overlay-frame"
+        title="Play game"
+        sandbox="allow-scripts allow-same-origin allow-pointer-lock allow-popups allow-forms allow-modals allow-orientation-lock allow-fullscreen"
+        allow="pointer-lock; fullscreen; gamepad; autoplay"
+      ></iframe>
+    </div>
+  </body>
+</html>
